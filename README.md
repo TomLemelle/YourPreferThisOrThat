@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# Tu préfères ça ou ça
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue dans **Tu préfères ça ou ça**, un jeu interactif amusant qui défie les utilisateurs à faire des choix entre deux images. L'application est construite avec React et Redux, offrant une expérience utilisateur fluide et une gestion efficace de l'état.
 
-Currently, two official plugins are available:
+## Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Les utilisateurs peuvent choisir entre des paires d'images et suivre leurs choix.
+- Les choix sont persistés même après un rafraîchissement de la page grâce à Redux Persist.
+- Un récapitulatif de tous les choix est affiché à la fin du jeu.
+- Design réactif pour une expérience optimale sur tous les appareils.
 
-## Expanding the ESLint configuration
+## Technologies Utilisées
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React et Vite** : Une bibliothèque JavaScript pour construire des interfaces utilisateur.
+- **Redux Toolkit** : Un outil puissant pour gérer l'état de l'application.
+- **Redux Persist** : Une bibliothèque pour persister et réhydrater l'état de Redux.
+- **CSS Modules** : Pour styliser les composants avec du CSS scoped.
 
-- Configure the top-level `parserOptions` property like this:
+## Contribuer
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer, n'hésitez pas à forker le dépôt et à soumettre une demande de tirage.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Licence
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Auteur
+
+Ce projet est développé et maintenu par [Tom Lemelle](https://www.linkedin.com/in/tom-lemelle).
+
+N'hésitez pas à me contacter pour toute question ou retour !
