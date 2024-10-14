@@ -5,6 +5,7 @@ import { RootState } from "../../store/store";
 import { addChoice, gameOver } from "../../store/slices/userChoicesSlice";
 import background from "../../assets/background.jpeg";
 import { useEffect, useState } from "react";
+import { persistor } from "../../store/store";
 
 const YouPreferThisOrThat: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const YouPreferThisOrThat: React.FC = () => {
   const handleGameOver = () => {
     setHoveredImage(null);
     dispatch(gameOver());
+    persistor.purge();
   };
 
   useEffect(() => {
@@ -93,7 +95,7 @@ const YouPreferThisOrThat: React.FC = () => {
           />
           <div className={styles.overlay}>
             <button
-              className={styles.chooseButton}
+              className={styles.chooseButton + " " + styles.chooseButtonLeft}
               style={{ background: colors[0] }}
               onClick={() =>
                 handleChoice(previousChoice || photos[currentIndex]?.name)
@@ -113,7 +115,7 @@ const YouPreferThisOrThat: React.FC = () => {
           />
           <div className={styles.overlay}>
             <button
-              className={styles.chooseButton}
+              className={styles.chooseButton + " " + styles.chooseButtonRight}
               style={{ background: colors[1] }}
               onClick={() => handleChoice(photos[currentIndex + 1]?.name)}
             >
@@ -156,6 +158,9 @@ const YouPreferThisOrThat: React.FC = () => {
           Cree par Tom Lemelle
         </a>
       </div>
+      <button className={styles.restart} onClick={handleGameOver}>
+        Recommencer
+      </button>
     </div>
   );
 };

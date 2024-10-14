@@ -64,6 +64,14 @@
   font-family: "ChillingSabrina", sans-serif;
 }
 
+.chooseButtonLeft:hover  {
+  background-color: #d12323;
+}
+
+.chooseButtonRight:hover  {
+  background-color: #e3664d;
+}
+
 .split:hover .overlay {
   opacity: 1;
 }
@@ -201,6 +209,10 @@
   font-family: "ChillingSabrina", sans-serif;
 }
 
+.gameOverButton:hover {
+  background-color: #d12323;
+}
+
 @media (max-width: 1500px) {
   .userChoicesContainer {
     width: 90%;
@@ -247,4 +259,25 @@
   color: white;
   font-size: 18px;
   text-decoration: underline;
+}
+
+.restart {
+  position: absolute;
+  bottom: 15px;
+  left: 114px;
+  transform: translateX(-50%);
+  border: none;
+  padding: 13px 24px;
+  border-radius: 10px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "ChillingSabrina", sans-serif;
+  background-color: #b90001;
+  transition: background ease-in-out 150ms;
+}
+
+.restart:hover {
+  background-color: #d12323;
 }
