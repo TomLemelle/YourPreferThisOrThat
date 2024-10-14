@@ -93,7 +93,7 @@ const YouPreferThisOrThat: React.FC = () => {
           />
           <div className={styles.overlay}>
             <button
-              className={styles.chooseButton}
+              className={styles.chooseButton + " " + styles.chooseButtonLeft}
               style={{ background: colors[0] }}
               onClick={() =>
                 handleChoice(previousChoice || photos[currentIndex]?.name)
@@ -113,7 +113,7 @@ const YouPreferThisOrThat: React.FC = () => {
           />
           <div className={styles.overlay}>
             <button
-              className={styles.chooseButton}
+              className={styles.chooseButton + " " + styles.chooseButtonRight}
               style={{ background: colors[1] }}
               onClick={() => handleChoice(photos[currentIndex + 1]?.name)}
             >
@@ -156,6 +156,9 @@ const YouPreferThisOrThat: React.FC = () => {
           Cree par Tom Lemelle
         </a>
       </div>
+      <button className={styles.restart} onClick={handleGameOver}>
+        Recommencer
+      </button>
     </div>
   );
 };
