@@ -1,0 +1,250 @@
+.youPreferThisOrThatContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.split {
+  height: 100vh;
+  width: 50%;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.imageContainer > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.separator {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 100vh;
+  background-color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chooseButton {
+  border: none;
+  padding: 13px 24px;
+  border-radius: 10px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "ChillingSabrina", sans-serif;
+}
+
+.split:hover .overlay {
+  opacity: 1;
+}
+
+.split:hover .chooseButton {
+  opacity: 1;
+}
+
+.questionContainer {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1257px;
+  max-width: 1257px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.questionContainer > h1 {
+  text-align: center;
+  color: white;
+  font-size: 90px;
+  font-family: "ChillingSabrina", sans-serif;
+}
+
+@media (max-width: 1300px) {
+  .questionContainer {
+    width: 90%;
+  }
+
+  .questionContainer > h1 {
+    font-size: 50px;
+  }
+}
+
+.userChoicesContainer {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1425px;
+  z-index: 1050;
+}
+
+.userChoices {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.userChoiceItem {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  min-width: 100px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-align: center;
+}
+
+.endMessage {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.endMessage > h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.endMessage > p {
+  color: white;
+  font-size: 30px;
+}
+
+.recapContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.recapItem {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hoveredImage {
+  width: 250px;
+  height: 250px;
+  margin: 20px auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.gameOverButton {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 13px 24px;
+  border-radius: 10px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  font-family: "ChillingSabrina", sans-serif;
+}
+
+@media (max-width: 1500px) {
+  .userChoicesContainer {
+    width: 90%;
+  }
+
+  .recapContainer {
+    width: 90%;
+  }
+
+  .hoveredImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(185, 0, 1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(185, 0, 1);
+}
+
+.madeByTomLemelle {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+
+.madeByTomLemelle > a {
+  color: white;
+  font-size: 18px;
+  text-decoration: underline;
+}
