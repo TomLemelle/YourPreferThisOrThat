@@ -5,6 +5,7 @@ import { RootState } from "../../store/store";
 import { addChoice, gameOver } from "../../store/slices/userChoicesSlice";
 import background from "../../assets/background.jpeg";
 import { useEffect, useState } from "react";
+import { persistor } from "../../store/store";
 
 const YouPreferThisOrThat: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const YouPreferThisOrThat: React.FC = () => {
   const handleGameOver = () => {
     setHoveredImage(null);
     dispatch(gameOver());
+    persistor.purge();
   };
 
   useEffect(() => {
